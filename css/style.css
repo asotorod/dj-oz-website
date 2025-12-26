@@ -94,7 +94,7 @@ section { padding: 5rem 2rem; }
 .dj-placeholder span { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 3px; }
 
 /* DJ Photo Styles */
-.dj-photo { width: 100%; height: auto; display: block; border-radius: 16px; object-fit: cover; aspect-ratio: 4/5; }
+.dj-photo { width: 100%; height: auto; display: block; border-radius: 16px; }
 
 /* Awards */
 .awards { background: var(--dark-bg); padding: 3rem 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
