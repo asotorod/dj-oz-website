@@ -7,7 +7,7 @@
     // Configuration - Set your intro video URL here
     const INTRO_VIDEO_CONFIG = {
         enabled: true,  // Set to false to disable intro video
-        videoUrl: '',   // Add your video URL here (e.g., 'videos/intro.mp4' or a full URL)
+        videoUrl: 'videos/djozintro.mp4',   // DJ OZ intro video
         showOnce: true  // If true, only shows once per session
     };
 
