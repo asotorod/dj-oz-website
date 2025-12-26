@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DJ OZ - Ozzie Bembe Productions</title>
+    <meta name="description" content="Contact DJ OZ for your next event. Request a quote for wedding DJ, event DJ, and entertainment services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">DJ OZ</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html#weddings">Weddings</a></li>
+                    <li><a href="services.html#events">Events</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+        <a href="tel:+15551234567" class="nav-phone">
+            <i class="fas fa-phone"></i>
+            (555) 123-4567
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>CONTACT <span class="gradient">US</span></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Contact Us</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Talk About Your Event</h2>
+                    <p>Ready to make your special day unforgettable? We'd love to hear from you! Whether you have questions about our services, want to discuss your event, or are ready to book, don't hesitate to reach out.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Phone / Text</h4>
+                                <a href="tel:+15551234567">(555) 123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@djoz.com">info@djoz.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Service Area</h4>
+                                <p>New York, New Jersey & Connecticut</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-method-text">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <h3>Request A Quote</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Event Date *</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventType">Event Type *</label>
+                                <select id="eventType" name="eventType" required>
+                                    <option value="">Select Event Type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="birthday">Birthday Party</option>
+                                    <option value="quinceanera">Quinceañera</option>
+                                    <option value="school">School Event/Prom</option>
+                                    <option value="private">Private Party</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guestCount">Estimated Guest Count</label>
+                                <input type="number" id="guestCount" name="guestCount" placeholder="e.g., 150">
+                            </div>
+                            <div class="form-group">
+                                <label for="venue">Venue Name</label>
+                                <input type="text" id="venue" name="venue" placeholder="Venue name (if known)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="venueAddress">Venue Location / City</label>
+                            <input type="text" id="venueAddress" name="venueAddress" placeholder="City, State">
+                        </div>
+                        <div class="form-group">
+                            <label for="services">Services Interested In</label>
+                            <select id="services" name="services">
+                                <option value="">Select Services</option>
+                                <option value="dj-only">DJ Only</option>
+                                <option value="dj-mc">DJ + MC</option>
+                                <option value="dj-lighting">DJ + Lighting</option>
+                                <option value="full-package">Full Package (DJ + MC + Lighting)</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Event</label>
+                            <textarea id="message" name="message" placeholder="Share any details about your event, special requests, music preferences, etc."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hearAbout">How Did You Hear About Us?</label>
+                            <select id="hearAbout" name="hearAbout">
+                                <option value="">Select Option</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="google">Google Search</option>
+                                <option value="referral">Friend/Family Referral</option>
+                                <option value="wedding-wire">WeddingWire</option>
+                                <option value="the-knot">The Knot</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="also-features">
+                <div class="also-grid">
+                    <ul>
+                        <li><i class="fas fa-question-circle"></i> <strong>How far in advance should I book?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">We recommend booking 6-12 months in advance for weddings and 2-3 months for other events.</span></li>
+                        <li><i class="fas fa-question-circle"></i> <strong>Do you require a deposit?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">Yes, a deposit is required to secure your date. The remaining balance is due before the event.</span></li>
+                        <li><i class="fas fa-question-circle"></i> <strong>Can I provide my own music playlist?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">Absolutely! We work with your playlist and can also integrate Spotify or Apple Music.</span></li>
+                    </ul>
+                    <ul>
+                        <li><i class="fas fa-question-circle"></i> <strong>Do you travel outside the Tri-State area?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">Yes! We're available for destination events. Travel fees may apply.</span></li>
+                        <li><i class="fas fa-question-circle"></i> <strong>What if I need to change my date?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">We understand plans change. Contact us as soon as possible and we'll work with you.</span></li>
+                        <li><i class="fas fa-question-circle"></i> <strong>Do you have backup equipment?</strong><br><span style="color: var(--text-secondary); margin-left: 1.75rem; display: block; margin-top: 0.5rem;">Yes, we always bring backup equipment to ensure your event runs smoothly.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Served -->
+    <section class="areas-served">
+        <div class="container">
+            <div class="areas-content">
+                <h3>Areas Served</h3>
+                <p>We cover the Tri-State area including New York, New Jersey, and Connecticut.</p>
+                <p class="areas-list">Manhattan, Brooklyn, Queens, Bronx, Staten Island, Jersey City, Newark, Hoboken, Paterson, Elizabeth, Stamford, and surrounding areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h4>Address</h4>
+                    <p>New York, NY<br>Tri-State Area</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us Today</h4>
+                    <p>
+                        <a href="tel:+15551234567"><i class="fas fa-phone"></i> (555) 123-4567</a><br>
+                        <a href="mailto:info@djoz.com"><i class="fas fa-envelope"></i> info@djoz.com</a>
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DJ OZ - Ozzie Bembe Productions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
