@@ -76,26 +76,15 @@
             0%, 100% { box-shadow: 0 0 30px rgba(255, 0, 255, 0.5); }
             50% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.7); }
         }
-        /* Hidden YouTube Player */
+        /* Hidden YouTube Player - Audio Only */
         #youtube-player-container {
             position: fixed;
-            bottom: 100px;
-            left: 30px;
-            width: 280px;
-            height: 158px;
-            z-index: 999;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            bottom: -9999px;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
             opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-        #youtube-player-container.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            pointer-events: none;
         }
         @media (max-width: 768px) {
             .music-player {
@@ -112,12 +101,6 @@
             .music-player-info {
                 display: none;
             }
-            #youtube-player-container {
-                left: 10px;
-                right: 10px;
-                width: calc(100% - 20px);
-                bottom: 80px;
-            }
         }
     </style>
 </head>
@@ -133,7 +116,7 @@
         </div>
     </div>
     
-    <!-- YouTube Player Container -->
+    <!-- YouTube Player Container (Hidden - Audio Only) -->
     <div id="youtube-player-container">
         <div id="ytPlayer"></div>
     </div>
@@ -362,7 +345,7 @@
     <script src="js/main.js"></script>
     <script src="js/intro-video.js"></script>
     
-    <!-- YouTube IFrame API -->
+    <!-- YouTube IFrame API - Audio Only -->
     <script>
         // Load YouTube IFrame API
         var tag = document.createElement('script');
@@ -379,12 +362,12 @@
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('ytPlayer', {
-                height: '158',
-                width: '280',
+                height: '1',
+                width: '1',
                 videoId: videoId,
                 playerVars: {
                     'autoplay': 0,
-                    'controls': 1,
+                    'controls': 0,
                     'loop': 1,
                     'playlist': videoId,
                     'modestbranding': 1,
@@ -418,21 +401,17 @@
             }
         }
 
-        // Button click handler
+        // Button click handler - Audio Only (no video shown)
         document.getElementById('musicPlayerBtn').addEventListener('click', function() {
-            var container = document.getElementById('youtube-player-container');
-            
             if (!playerReady) {
                 console.log('Player not ready yet');
                 return;
             }
             
             if (!isPlaying) {
-                container.classList.add('show');
                 player.playVideo();
             } else {
                 player.pauseVideo();
-                container.classList.remove('show');
             }
         });
     </script>
