@@ -61,15 +61,17 @@
             color: rgba(255, 255, 255, 0.4);
             margin: 0 0.5rem;
         }
-        .instagram-section {
+
+        /* Gallery Grid Section */
+        .gallery-section {
             padding: 5rem 0;
             background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(20, 10, 30, 0.95) 100%);
         }
-        .instagram-section .section-header {
+        .gallery-section .section-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
-        .instagram-section .section-label {
+        .gallery-section .section-label {
             display: inline-block;
             padding: 0.5rem 1.5rem;
             background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
@@ -81,48 +83,118 @@
             color: #00ffff;
             margin-bottom: 1rem;
         }
-        .instagram-section h2 {
+        .gallery-section h2 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2.5rem;
             color: #fff;
             margin-bottom: 0.5rem;
         }
-        .instagram-section .instagram-handle {
+        .gallery-section > .container > p {
             color: rgba(255, 255, 255, 0.6);
             font-size: 1rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .photo-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+        .photo-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        .photo-item:hover .overlay {
+            opacity: 1;
+        }
+        .photo-item .overlay span {
+            color: #fff;
+            font-weight: 500;
+        }
+        .photo-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Coming Soon Notice */
+        .coming-soon-notice {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            margin-top: 3rem;
+        }
+        .coming-soon-notice i {
+            font-size: 3rem;
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+        .coming-soon-notice h3 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .coming-soon-notice p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Social CTA */
+        .social-cta {
+            padding: 4rem 0;
+            background: rgba(10, 10, 15, 0.95);
+            text-align: center;
+        }
+        .social-cta h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .social-cta p {
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 2rem;
         }
-        .instagram-section .instagram-handle a {
-            color: #ff00ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .instagram-section .instagram-handle a:hover {
-            color: #00ffff;
-        }
-        .lightwidget-widget {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .follow-btn {
+        .social-cta .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #ff00ff, #00ffff);
-            color: #0a0a0f;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
         }
-        .follow-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.4);
-        }
-        .follow-btn i {
-            font-size: 1.25rem;
+
+        @media (max-width: 992px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photo-item.large {
+                grid-column: span 2;
+                grid-row: span 1;
+                aspect-ratio: 2/1;
+            }
         }
         @media (max-width: 768px) {
             .gallery-hero {
@@ -135,8 +207,15 @@
             .gallery-hero-content p {
                 font-size: 1rem;
             }
-            .instagram-section h2 {
+            .gallery-section h2 {
                 font-size: 2rem;
+            }
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            .photo-item.large {
+                grid-column: span 1;
+                aspect-ratio: 1;
             }
         }
     </style>
@@ -156,6 +235,7 @@
                 </ul>
             </li>
             <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="connect.html">Connect</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <a href="tel:+12013282176" class="nav-phone">
@@ -180,23 +260,70 @@
         </div>
     </section>
 
-    <!-- Instagram Gallery Section -->
-    <section class="instagram-section">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label"><i class="fab fa-instagram"></i> Instagram</span>
-                <h2>Follow Us on Instagram</h2>
-                <p class="instagram-handle">Check out our latest events <a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank">@ozziebembeproductions_</a></p>
+                <span class="section-label"><i class="fas fa-images"></i> Event Photos</span>
+                <h2>Memories We've Created</h2>
             </div>
-            <!-- LightWidget WIDGET -->
-            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-            <iframe src="//lightwidget.com/widgets/749074e7733456cfa2e892772aa1694b.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-            <div style="text-align: center;">
-                <a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="follow-btn">
-                    <i class="fab fa-instagram"></i>
-                    Follow @ozziebembeproductions_
-                </a>
+            <p>Highlights from weddings, corporate events, and private celebrations</p>
+
+            <!-- Photo Grid -->
+            <div class="photo-grid">
+                <div class="photo-item large">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800" alt="Wedding Reception">
+                    <div class="overlay"><span>Wedding Reception</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600" alt="DJ Setup">
+                    <div class="overlay"><span>DJ Setup</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600" alt="Dance Floor">
+                    <div class="overlay"><span>Dance Floor</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1504704911898-68304a7d2807?w=600" alt="Lighting Effects">
+                    <div class="overlay"><span>Lighting Effects</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600" alt="Corporate Event">
+                    <div class="overlay"><span>Corporate Event</span></div>
+                </div>
+                <div class="photo-item large">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800" alt="Live Performance">
+                    <div class="overlay"><span>Live Performance</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600" alt="Party Atmosphere">
+                    <div class="overlay"><span>Party Atmosphere</span></div>
+                </div>
+                <div class="photo-item">
+                    <img src="https://images.unsplash.com/photo-1571266028243-d220c6a8b9b6?w=600" alt="Crowd Dancing">
+                    <div class="overlay"><span>Crowd Dancing</span></div>
+                </div>
             </div>
+
+            <!-- Coming Soon Notice -->
+            <div class="coming-soon-notice">
+                <i class="fas fa-camera"></i>
+                <h3>More Photos Coming Soon!</h3>
+                <p>We're adding more event photos and videos. Check back soon or follow us on social media for the latest updates.</p>
+                <a href="connect.html" class="btn btn-primary">View Our Social Media</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social CTA -->
+    <section class="social-cta">
+        <div class="container">
+            <h3>Want to See More?</h3>
+            <p>Follow us on Instagram for daily updates, stories, and behind-the-scenes content</p>
+            <a href="connect.html" class="btn btn-outline">
+                <i class="fas fa-share-alt"></i>
+                Connect With Us
+            </a>
         </div>
     </section>
 
@@ -214,7 +341,7 @@
             <div class="footer-grid">
                 <div class="footer-info"><h4>Address</h4><p>New York, NY<br>Tri-State Area</p></div>
                 <div class="footer-contact"><h4>Contact Us Today</h4><p><a href="tel:+12013282176"><i class="fas fa-phone"></i> (201) 328-2176</a><br><a href="mailto:ozziebembe@gmail.com"><i class="fas fa-envelope"></i> ozziebembe@gmail.com</a></p></div>
-                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-tiktok"></i></a></div></div>
+                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/ozzie.manresa" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/@ozziem464" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a><a href="https://x.com/ManresaOzzie" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a></div></div>
             </div>
             <div class="footer-bottom"><p>&copy; 2024 DJ OZ - Ozzie Bembe Productions. All Rights Reserved.</p></div>
         </div>
