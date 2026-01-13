@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Equipment Rental | DJ OZ - Ozzie Bembe Productions</title>
+    <meta name="description" content="Rent professional DJ equipment from DJ OZ. Speakers, mixers, turntables, lighting, and more available for your event.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/intro-video.css">
+    <style>
+        .rental-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1571266028243-d220c6a8b9b6?q=80&w=2340&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .rental-hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .rental-hero-content h1 .gradient {
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .rental-hero-content p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .breadcrumb {
+            margin-top: 1.5rem;
+        }
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .breadcrumb a:hover {
+            color: #00ffff;
+        }
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.4);
+            margin: 0 0.5rem;
+        }
+
+        /* Equipment Section */
+        .equipment-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.95) 0%, rgba(20, 10, 30, 0.95) 100%);
+        }
+        .equipment-section .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .equipment-section .section-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+        .equipment-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .equipment-section > .container > p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Equipment Grid */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .equipment-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 0, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .equipment-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .equipment-card-content {
+            padding: 1.5rem;
+        }
+        .equipment-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .equipment-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .equipment-card .equipment-features {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .equipment-card .equipment-features li {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .equipment-card .equipment-features li i {
+            color: #00ffff;
+            font-size: 0.75rem;
+        }
+
+        /* Contact CTA Section */
+        .rental-cta {
+            padding: 5rem 0;
+            background: rgba(10, 10, 15, 0.95);
+            text-align: center;
+        }
+        .rental-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .rental-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        .rental-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        .rental-cta .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .rental-cta .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .rental-cta .contact-method:hover {
+            color: #00ffff;
+        }
+        .rental-cta .contact-method i {
+            font-size: 1.25rem;
+            color: #ff00ff;
+        }
+
+        /* Why Rent Section */
+        .why-rent {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, rgba(20, 10, 30, 0.95) 0%, rgba(10, 10, 15, 0.95) 100%);
+        }
+        .why-rent .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .why-rent .section-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00ffff;
+            margin-bottom: 1rem;
+        }
+        .why-rent h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .benefit-card:hover {
+            border-color: rgba(0, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        .benefit-card i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .benefit-card h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .rental-hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+            .rental-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .rental-cta .contact-methods {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="logo">DJ OZ</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html#weddings">Weddings</a></li>
+                    <li><a href="services.html#events">Events</a></li>
+                    <li><a href="equipment-rental.html">Equipment Rental</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <a href="tel:+12013282176" class="nav-phone">
+            <i class="fas fa-phone"></i>
+            (201) 328-2176
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Rental Hero -->
+    <section class="rental-hero">
+        <div class="rental-hero-content">
+            <h1>DJ EQUIPMENT <span class="gradient">RENTAL</span></h1>
+            <p>Professional DJ equipment available for rent for your next event</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="services.html">Services</a>
+                <span>/</span>
+                <span style="color: #fff;">Equipment Rental</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-headphones"></i> Available Equipment</span>
+                <h2>Professional DJ Gear For Rent</h2>
+            </div>
+            <p>We offer a wide selection of professional-grade DJ equipment for rent. Perfect for DJs, event planners, or anyone looking to elevate their event.</p>
+
+            <div class="equipment-grid">
+                <!-- Speakers -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&auto=format&fit=crop" alt="Professional Speakers">
+                    <div class="equipment-card-content">
+                        <h3>Speakers & Sound Systems</h3>
+                        <p>Professional PA systems and speakers for events of all sizes.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Active & Passive Speakers</li>
+                            <li><i class="fas fa-check"></i> Subwoofers</li>
+                            <li><i class="fas fa-check"></i> PA Systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DJ Controllers -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&auto=format&fit=crop" alt="DJ Controllers">
+                    <div class="equipment-card-content">
+                        <h3>DJ Controllers & Mixers</h3>
+                        <p>Industry-standard controllers and mixers for professional performance.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Pioneer DJ Controllers</li>
+                            <li><i class="fas fa-check"></i> Audio Mixers</li>
+                            <li><i class="fas fa-check"></i> CDJs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Turntables -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1576419840119-bddd76d62bbc?w=600&auto=format&fit=crop" alt="Turntables">
+                    <div class="equipment-card-content">
+                        <h3>Turntables</h3>
+                        <p>Professional turntables for vinyl enthusiasts and scratch DJs.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Direct Drive Turntables</li>
+                            <li><i class="fas fa-check"></i> Cartridges & Needles</li>
+                            <li><i class="fas fa-check"></i> Slipmats</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Lighting -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1504704911898-68304a7d2807?w=600&auto=format&fit=crop" alt="DJ Lighting">
+                    <div class="equipment-card-content">
+                        <h3>Lighting Equipment</h3>
+                        <p>Create the perfect atmosphere with professional lighting.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Moving Head Lights</li>
+                            <li><i class="fas fa-check"></i> LED Uplighting</li>
+                            <li><i class="fas fa-check"></i> Strobe & Laser Effects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Microphones -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?w=600&auto=format&fit=crop" alt="Microphones">
+                    <div class="equipment-card-content">
+                        <h3>Microphones</h3>
+                        <p>Wireless and wired microphones for speeches and performances.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Wireless Handheld Mics</li>
+                            <li><i class="fas fa-check"></i> Lapel Microphones</li>
+                            <li><i class="fas fa-check"></i> Headset Mics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div class="equipment-card">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&auto=format&fit=crop" alt="DJ Accessories">
+                    <div class="equipment-card-content">
+                        <h3>Accessories & Stands</h3>
+                        <p>All the extras you need for a complete setup.</p>
+                        <ul class="equipment-features">
+                            <li><i class="fas fa-check"></i> Speaker Stands</li>
+                            <li><i class="fas fa-check"></i> Cables & Adapters</li>
+                            <li><i class="fas fa-check"></i> DJ Tables & Booths</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Rent Section -->
+    <section class="why-rent">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Benefits</span>
+                <h2>Why Rent From DJ OZ?</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-tools"></i>
+                    <h4>Well Maintained</h4>
+                    <p>All equipment is professionally maintained and tested</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Delivery Available</h4>
+                    <p>We can deliver and setup equipment at your venue</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Technical Support</h4>
+                    <p>Get help with setup and troubleshooting</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Competitive Rates</h4>
+                    <p>Affordable pricing for quality equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="rental-cta">
+        <div class="container">
+            <div class="rental-cta-content">
+                <h2>Interested In Renting Equipment?</h2>
+                <p>Contact us for availability, pricing, and to discuss your rental needs. We'll help you find the right equipment for your event.</p>
+                <div class="contact-methods">
+                    <a href="tel:+12013282176" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        (201) 328-2176
+                    </a>
+                    <a href="mailto:ozziebembe@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        ozziebembe@gmail.com
+                    </a>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-large">Contact Us For More Information</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Need a DJ For Your Event?</h2>
+            <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">We also offer full DJ services for weddings, corporate events, and private parties.</p>
+            <a href="services.html" class="btn btn-primary btn-large">View Our DJ Services</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info"><h4>Address</h4><p>New York, NY<br>Tri-State Area</p></div>
+                <div class="footer-contact"><h4>Contact Us Today</h4><p><a href="tel:+12013282176"><i class="fas fa-phone"></i> (201) 328-2176</a><br><a href="mailto:ozziebembe@gmail.com"><i class="fas fa-envelope"></i> ozziebembe@gmail.com</a></p></div>
+                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="https://www.instagram.com/ozziebembeproductions_/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/ozzie.manresa" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/@ozziem464" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a><a href="https://x.com/ManresaOzzie" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i></a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 DJ OZ - Ozzie Bembe Productions. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/intro-video.js"></script>
+</body>
+</html>
